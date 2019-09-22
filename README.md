@@ -1,7 +1,8 @@
 # Read Me
 
 Here are my exercises, assessments and practice problems from
-[Launch School](https://launchschool.com)'s RB 170 course, "Networking Foundations".
+[Launch School](https://launchschool.com)'s RB 170 course, 
+"Networking Foundations".
 
 Themes of this course:
 * The Internet
