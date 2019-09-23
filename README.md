@@ -16,7 +16,7 @@ Themes of this course:
   * Ports and sockets
   * Network reliability
   * Characteristics of TCP
-  * Characteristics of UDPP
+  * Characteristics of UDP
 * The HTTP Protocol
   * Understanding the HTTP protocol
   * URLs
