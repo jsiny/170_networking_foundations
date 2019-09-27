@@ -20,12 +20,18 @@ function server () {
     then
       if [[ -f "./www/$path" ]]
       then
-        echo -ne 'HTTP/1.1 200 OK\r\n\r\n'; cat "./www/$path"
+        echo -ne 'HTTP/1.1 200 OK\r\n'
+        echo -ne 'Content-Type: text/html; charset=utf-8\r\n'
+        content_length=$(wc -c < "./www/$path")
+        echo -ne "Content-Length: $content_length\r\n\r\n"
+        cat "./www/$path"
       else
-        echo 'HTTP/1.1 404 Not Found\r\n\r\n'
+        echo -ne 'HTTP/1.1 404 Not Found\r\n'
+        echo -ne 'Content-Length: 0\r\n\r\n'
       fi
     else
-      echo -ne 'HTTP/1.1 400 Bad Request\r\n\r\n'
+      echo -ne 'HTTP/1.1 400 Bad Request\r\n'
+      echo -ne 'Content-Length: 0\r\n\r\n'
     fi
   done
 }
