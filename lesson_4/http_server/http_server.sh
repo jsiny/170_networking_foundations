@@ -8,6 +8,7 @@ function server () {
     while $check
     do
       read line
+      >&2 "Line: $line. Line length: ${#line}"
       message_arr+=($line)
       if [[ "${#line}" -eq 1 ]]
       then
@@ -33,6 +34,8 @@ function server () {
       echo -ne 'HTTP/1.1 400 Bad Request\r\n'
       echo -ne 'Content-Length: 0\r\n\r\n'
     fi
+    # echo "Your message: ${message_arr[*]}"
+    # echo "Size of message: ${#message_arr[@]}"
   done
 }
 
